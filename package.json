@@ -1,0 +1,23 @@
+{
+  "name": "first-node",
+  "version": "0.0.1",
+  "description": "Elice Class for npm",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "live-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CHOCOCHANEL/ELICE-M02-TypeScript-Node.js-MongoDB.git"
+  },
+  "author": "CHOCO",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CHOCOCHANEL/ELICE-M02-TypeScript-Node.js-MongoDB/issues"
+  },
+  "homepage": "https://github.com/CHOCOCHANEL/ELICE-M02-TypeScript-Node.js-MongoDB#readme",
+  "dependencies": {
+    "lite-server": "^2.6.1"
+  }
+}
