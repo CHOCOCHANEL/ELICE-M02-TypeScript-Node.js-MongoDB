@@ -37,10 +37,25 @@ router.post('/addbook', (req, res)=>{
 router.get('/book/:bookName', (req, res)=>{
     const bookName = req.params.bookName;
 
-    bookSchema.find( {bookName: bookName}, (err, result)=>{
+    bookSchema.findOne( {bookName: bookName}, (err, result)=>{
         if (result) res.json(result);
         else res.send(`${bookName}으로 등록된 책이 없습니다.`);
     });
 })
+
+router.get('/del', (req, res) => {
+    res.render('delete');
+})
+
+router.get("/del/:id", (req, res) => {
+    const bookName = req.params.id;
+    bookSchema.findOneAndDelete({ bookName: bookName })
+      .then((result) => {
+        res.json({ redirect: "/example" });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  });
 
 module.exports = router;
