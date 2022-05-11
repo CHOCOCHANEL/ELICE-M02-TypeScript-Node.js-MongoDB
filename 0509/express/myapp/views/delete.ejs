@@ -7,12 +7,12 @@
     <title>Delete</title>
 </head>
 <body>
-    <a data-doc="test" class="delete">지우기</a>
+    <a data-doc="chocoStory" class="delete">지우기</a>
 </body>
 <script>
     const trashcan = document.querySelector('a.delete');
     trashcan.addEventListener('click', (e) => {
-      const endpoint = `/expost/del/${trashcan.dataset.doc}`;
+      const endpoint = `/example/del/${trashcan.dataset.doc}`;
       fetch(endpoint, {
         method: 'DELETE',
       })

@@ -47,7 +47,7 @@ router.get('/del', (req, res) => {
     res.render('delete');
 })
 
-router.get("/del/:id", (req, res) => {
+router.delete("/del/:id", (req, res) => {
     const bookName = req.params.id;
     bookSchema.findOneAndDelete({ bookName: bookName })
       .then((result) => {
