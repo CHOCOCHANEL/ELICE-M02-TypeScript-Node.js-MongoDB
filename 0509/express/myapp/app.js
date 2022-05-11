@@ -8,6 +8,8 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var callRouter = require('./routes/call');
 var postRouter = require('./routes/post');
+var dbconnect = require('./models/index');
+dbconnect();
 
 var app = express();
 
