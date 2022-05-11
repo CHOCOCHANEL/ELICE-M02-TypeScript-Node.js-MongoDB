@@ -34,4 +34,13 @@ router.post('/addbook', (req, res)=>{
     res.redirect('/example');
 });
 
+router.get('/book/:bookName', (req, res)=>{
+    const bookName = req.params.bookName;
+
+    bookSchema.find( {bookName: bookName}, (err, result)=>{
+        if (result) res.json(result);
+        else res.send(`${bookName}으로 등록된 책이 없습니다.`);
+    });
+})
+
 module.exports = router;
