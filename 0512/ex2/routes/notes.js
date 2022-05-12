@@ -7,4 +7,15 @@ router.get('/', (req, res, next)=>{
     res.json(notes);
 })
 
+router.get('/:id', (req, res, next)=>{
+    const id = Number(req.params.id);
+
+    try{
+        const note = Note.get(id);
+        res.json(note);
+    } catch (e) {
+        next(e);
+    }
+})
+
 module.exports = router;

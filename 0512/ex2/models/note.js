@@ -25,6 +25,16 @@ exports.list = () => {
     return notes.map(({ id, title, author }) => ({ id, title, author }));
 }
 
+exports.get = (id) => {
+    const note = notes.find((note) => note.id === id);
+
+    if(!note){
+        throw new Error(`id=${id} Note Not Found`);
+    }
+
+    return note;
+}
+
 exports.authorList = () => {
     const authors = notes.map(({author}) => author);
     return [...new Set(authors)];
