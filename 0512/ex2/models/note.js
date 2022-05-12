@@ -21,3 +21,17 @@ let notes = [
     }
 ];
 
+exports.authorList = () => {
+    const authors = notes.map(({author}) => author);
+    return [...new Set(authors)];
+}
+
+exports.findByAuthor = (author) => {
+    const notesByAuthor = notes.filter(note => note.author===author);
+
+    if(notesByAuthor < 1) {
+        throw new Error(`${author} has no note.`);
+    }
+
+    return notesByAuthor;
+}
