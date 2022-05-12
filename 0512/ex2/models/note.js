@@ -21,6 +21,10 @@ let notes = [
     }
 ];
 
+exports.list = () => {
+    return notes.map(({ id, title, author }) => ({ id, title, author }));
+}
+
 exports.authorList = () => {
     const authors = notes.map(({author}) => author);
     return [...new Set(authors)];
