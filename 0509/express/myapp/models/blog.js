@@ -23,7 +23,7 @@ blogSchema.plugin(autoIncrement.plugin, {
     model: 'blog',
     field: 'no',
     startAt: 1,
-    increment: 1,
+    incrementBy: 1,
 });
 
 module.exports = mongoose.model('blog', blogSchema);;
