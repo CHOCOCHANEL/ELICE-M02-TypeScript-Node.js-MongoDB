@@ -18,7 +18,22 @@
     </header>
 
     <main>
-        
+        <article>
+            <p>글 목록</p>
+            <div>
+                <table>
+                    <th>제목</th>
+                    <th>내용</th>
+                    <% for (const blog of blogList) { %>
+                        <tr>
+                            <td><%= blog.title %></td>
+                            <td><%= blog.content %></td>
+                        </tr>
+                    <% } %>
+                </table>
+            </div>
+            
+        </article>
     </main>
 
     <footer>

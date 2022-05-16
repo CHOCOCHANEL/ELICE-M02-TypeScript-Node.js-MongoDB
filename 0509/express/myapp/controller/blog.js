@@ -1,7 +1,8 @@
 const blogSchema = require('../models/blog');
 
-const renderController = (req, res) => {
-    res.render('blog', { title: 'MyBlog', headMessage: 'Hello My Blog' });
+const renderController = async (req, res) => {
+    const blogList = await blogSchema.find({}).exec();
+    res.render('blog', { title: 'MyBlog', headMessage: 'Hello My Blog', blogList: blogList });
 }
 
 const writeController = (req, res) => {
