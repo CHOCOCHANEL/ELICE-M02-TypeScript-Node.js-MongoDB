@@ -12,8 +12,6 @@
         <h1><%= headMessage %></h1>
         <ul>
             <li><a href="blog/write">글쓰기</a></li>
-            <li><a href=""></a></li>
-            <li><a href=""></a></li>
         </ul>
     </header>
 
@@ -22,10 +20,12 @@
             <p>글 목록</p>
             <div>
                 <table>
+                    <th>글번호</th>
                     <th>제목</th>
                     <th>내용</th>
                     <% for (const blog of blogList) { %>
                         <tr>
+                            <td><%= blog.no %></td>
                             <td><%= blog.title %></td>
                             <td><%= blog.content %></td>
                         </tr>
