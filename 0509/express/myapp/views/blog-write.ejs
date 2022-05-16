@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+    <header>
+        <h1><%= headMessage %></h1>
+        <ul>
+            <li><a href="/blog/write">글쓰기</a></li>
+        </ul>
+    </header>
+
+    <main>
+        <article>
+            <form action="/blog/write" method="post">
+                <div>
+                    <label for="title">제목</label>
+                    <input type="text" name="title">
+                </div>
+                
+                <div>
+                    <label for="content">내용</label>
+                <textarea name="content" id="content" cols="30" rows="10"></textarea>
+                </div>
+
+                <div>
+                    <input type="submit" value="전송하기">
+                </div>
+                
+            </form>
+        </article>
+    </main>
+
+    <footer>
+
+    </footer>
+</body>
+</html>
