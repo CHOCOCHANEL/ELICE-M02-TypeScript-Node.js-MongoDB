@@ -4,7 +4,7 @@ const renderController = (req, res) => {
     res.render('post', { title: 'Example-post' });
 }
 
-const postController =(req, res) => {
+const postController = (req, res) => {
     const name = req.body.name;
     const phone = req.body.phone;
     const date = req.body.date;
