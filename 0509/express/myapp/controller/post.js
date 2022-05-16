@@ -41,6 +41,11 @@ const getBookController = (req, res) => {
     });
 }
 
+const getBookListController = async (req, res) => {
+    const result = await bookSchema.find({}).exec();
+    return res.status(200).json(result);
+}
+
 const deleteController = (req, res) => {
     res.render('delete');
 }
@@ -62,6 +67,7 @@ module.exports = {
     postController,
     postAddBookController,
     getBookController,
+    getBookListController,
     deleteController,
     deleteBookNameController
 }
