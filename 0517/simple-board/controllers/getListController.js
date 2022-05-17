@@ -5,6 +5,7 @@ const getListController = async (req, res, next) => {
         res.render('post/edit');
         return;
     }
+    // READ Posts
     const posts = await Post.find({});
     res.render('post/list', { posts });
 }
