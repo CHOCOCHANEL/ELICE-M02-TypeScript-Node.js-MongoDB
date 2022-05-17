@@ -10,6 +10,7 @@ const dbconnect = require('./models/dbconnect');
 dbconnect();
 
 var indexRouter = require('./routes/index');
+const postRouter = require('./routes/posts');
 
 var app = express();
 
@@ -24,6 +25,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
+app.use('/posts', postRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
