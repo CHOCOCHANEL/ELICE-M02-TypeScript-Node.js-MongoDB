@@ -4,13 +4,14 @@ const { getListController,
         createPostController,
         updatePostController,
         deletePostController } = require('../controllers');
+const asyncErrorHandler = require('../utils/async-handler');
 
 const router = Router();
 
-router.get('/', getListController);
-router.get('/:shortId', getPostController);
-router.post('/', createPostController);
-router.post('/:shortId', updatePostController);
-router.delete('/:shortId', deletePostController);
+router.get('/', asyncErrorHandler(getListController));
+router.get('/:shortId', asyncErrorHandler(getPostController));
+router.post('/', asyncErrorHandler(createPostController));
+router.post('/:shortId', asyncErrorHandler(updatePostController));
+router.delete('/:shortId', asyncErrorHandler(deletePostController));
 
 module.exports = router;
