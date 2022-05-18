@@ -2,10 +2,11 @@ const { User } = require('../models/blog-user');
 const bcrypt = require('bcrypt');
 const { body, validationResult } = require('express-validator');
 
-const renderController = (req, res, next) => {
+const renderController = async (req, res, next) => {
     const { mode } = req.query || 'signin';
     if (mode === 'signup') {
         res.render('blog-signup');
+        return;
     } 
     res.render('blog-signin');
 };
@@ -19,7 +20,14 @@ const signupController = async (req, res, next) => {
         });
     }
 
+    // 중복 가입
     const { email, password } = req.body;
+    const user = await User.findOne({ email: email }).exec();
+    
+    if (user) {
+        return res.status(401).json({ msg: 'Email already exists'});
+    }
+
     const salt = bcrypt.genSaltSync(10);
     const bcryptPassword = bcrypt.hashSync(password, salt);
     
@@ -29,13 +37,13 @@ const signupController = async (req, res, next) => {
     }).then(result => {
         res.status(200).json(result);
     });
+
+    
 };
 
 const signinController = async (req, res, next) => {
     const { email, password } = req.body;
     const user = await User.findOne({ email: email }).exec();
-    console.log(email, password);
-    console.log(user);
 
     if (!user) {
         return res.status(401).json({ msg: 'No enrollment'});
@@ -43,7 +51,7 @@ const signinController = async (req, res, next) => {
 
     // Confirm password
     const passwordMatched = bcrypt.compareSync(password, user.password);
-    passwordMatched? res.status(200).send('Ok') : res.status(401).send('wrong password!');
+    passwordMatched? res.status(200).send('Ok') : res.status(401).send('Wrong password!');
 }
 
 module.exports = {

@@ -9,6 +9,7 @@
 </head>
 <body>
     <main>
+        <h1>로그인</h1>
         <div class="container">
             <form action="/users/signin" method="post">
                 <div class="field">
@@ -27,6 +28,7 @@
 
                 <div class="control">
                     <input class="button is-primary" id="submitButton" type="submit" value="로그인">
+                    <input class="button is-primary" id="submitButton" value="회원가입" onclick="location.href='/users?mode=signup';">
                 </div>
             </form>
         </div>
