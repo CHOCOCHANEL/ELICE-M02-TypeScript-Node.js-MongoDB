@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const { Schema } = require('mongoose');
+const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
     email: {
@@ -14,5 +14,6 @@ const userSchema = new Schema({
     timestamps: true,
 });
 
-exports.userSchema = mongoose.model('userSchema', userSchema);
+
+exports.User = mongoose.model('User', userSchema);
 
