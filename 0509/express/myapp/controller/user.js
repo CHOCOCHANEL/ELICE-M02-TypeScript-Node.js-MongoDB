@@ -6,7 +6,7 @@ const renderController = (req, res, next) => {
     res.render('blog-user');
 };
 
-const signupController = (req, res, next) => {
+const signupController = async (req, res, next) => {
     const errors = validationResult(req);
 
     if(!errors.isEmpty()) {
@@ -19,7 +19,7 @@ const signupController = (req, res, next) => {
     const salt = bcrypt.genSaltSync(10);
     const bcryptPassword = bcrypt.hashSync(password, salt);
     
-    User.create({
+    await User.create({
         email: email,
         password: bcryptPassword,
     }).then(result => {
@@ -27,7 +27,20 @@ const signupController = (req, res, next) => {
     });
 };
 
+const signinController = async (req, res, next) => {
+    const { email, password } = req.body;
+    const user = await User.findOne({ email: email }).exec();
+
+    if (!user) {
+        return res.status(401).json({ msg: 'No enrollment'});
+    }
+
+    // Confirm password
+    res.send('Ok');
+}
+
 module.exports = {
     renderController,
     signupController,
+    signinController,
 }
