@@ -54,8 +54,14 @@ const signinController = async (req, res, next) => {
     passwordMatched? res.status(200).send('Ok') : res.status(401).send('Wrong password!');
 }
 
+const cookieController = async (req, res, next) => {
+    res.cookie('cookie', 'choco');
+    res.send('set cookies');
+}
+
 module.exports = {
     renderController,
     signupController,
     signinController,
+    cookieController,
 }
