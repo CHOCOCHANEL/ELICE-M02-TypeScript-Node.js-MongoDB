@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog 회원가입</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+</head>
+<body>
+    <main>
+        <div class="container">
+            <form action="/users/signup" method="post">
+                <div class="field">
+                    <label for="email">이메일 </label>
+                    <div class="control">
+                        <input class="input" type="text" name="email" type="email" placeholder="choco@example.com">
+                    </div>
+                </div>
+                
+                <div class="field">
+                    <label for="password">비밀번호</label>
+                    <div class="control">
+                        <input class="input" name="password" id="password" type="password"></input>
+                    </div>
+                </div>
+
+                <div class="control">
+                    <input class="button is-primary" id="submitButton" type="submit" value="가입하기">
+                </div>
+            </form>
+        </div>
+    </main>
+</body>
+</html>
