@@ -3,7 +3,11 @@ const bcrypt = require('bcrypt');
 const { body, validationResult } = require('express-validator');
 
 const renderController = (req, res, next) => {
-    res.render('blog-user');
+    const { mode } = req.query || 'signin';
+    if (mode === 'signup') {
+        res.render('blog-signup');
+    } 
+    res.render('blog-signin');
 };
 
 const signupController = async (req, res, next) => {
@@ -30,13 +34,16 @@ const signupController = async (req, res, next) => {
 const signinController = async (req, res, next) => {
     const { email, password } = req.body;
     const user = await User.findOne({ email: email }).exec();
+    console.log(email, password);
+    console.log(user);
 
     if (!user) {
         return res.status(401).json({ msg: 'No enrollment'});
     }
 
     // Confirm password
-    res.send('Ok');
+    const passwordMatched = bcrypt.compareSync(password, user.password);
+    passwordMatched? res.status(200).send('Ok') : res.status(401).send('wrong password!');
 }
 
 module.exports = {
