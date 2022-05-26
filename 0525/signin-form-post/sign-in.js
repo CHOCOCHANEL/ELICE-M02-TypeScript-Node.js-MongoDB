@@ -1,29 +1,28 @@
-const name = document.getElementById('name').value;
-const nickname = document.getElementById('nickname').value;
 const email = document.getElementById('email').value;
 const password = document.getElementById('password').value;
-const password2 = document.getElementById('confirm-pwd').value;
 
 const btn = document.getElementById('submitButton');
 
 const alertFunc = async (e) => {
     e.preventDefault();
 
-    if (password !== password2) {
-        return alert('Check your password please.');
-    }
-
     const user = {
-        name,
-        nickname,
         email,
         password,
     };
 
+    if(!email) {
+        return alert('이메일을 입력해주세요.');
+    }
+
+    if(!password) {
+        return alert('패스워드를 입력해주세요.');
+    }
+
     const userJson = JSON.stringify(user);
     const PORT = 5500;
     const URL = `https://${window.location.hostname}:${PORT}`
-    const URI = '/api/register';
+    const URI = '/api/login';
 
     const res = await fetch(URL + URI, {
         method: 'POST',
