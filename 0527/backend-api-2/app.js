@@ -43,9 +43,26 @@ app.get('/compare/:num1/:num2', (req, res) => {
     res.json(data);
 })
 
-app.get('/product/1', (req, res) => {
-    res.json(data);
+app.get('/product', (req, res) => {
+    res.render('product.html');
 })
+
+
+
+app.get('/product/:productId', (req, res) => {
+    const { productId } = req.params;
+
+    const idx = parseInt(productId) - 1;
+
+    const products = require('./db/product/products.json');
+
+    const productData = products[idx];
+
+    res.json(productData);
+    
+});
+
+
 
 export { app };
 

@@ -1,3 +1,5 @@
+const PORT = 3000;
+
 // 요소들 모음
 const uriElem = document.querySelector('#uri');
 const number1Input = document.querySelector('#num1');
@@ -33,3 +35,8 @@ function handleInput() {
 
   uriElem.innerText = `/compare/${number1}/${number2}`
 }
+
+const btn = document.getElementById('requestParam');
+btn.addEventListener('click', () => {
+    window.location.href = `http://localhost:${PORT}/product`;
+})
