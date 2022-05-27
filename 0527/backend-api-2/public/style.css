@@ -1,7 +1,9 @@
 .container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
     height: 100vh;
     background-color: #bcbcbc;
   }
@@ -29,4 +31,25 @@
   
   .description .price {
     margin-bottom: 3rem;
+  }
+
+  .result {
+    border: #333 1px solid;
+    padding: 0.5rem;
+  }
+  
+  .input-container {
+    display: flex;
+  }
+  
+  .input {
+    width: 3rem;
+    margin: 0 0.5rem 0.5rem 0.5rem;
+  }
+  
+  /* 숫자 input 상자의 화살표를 없앰 */
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
   }

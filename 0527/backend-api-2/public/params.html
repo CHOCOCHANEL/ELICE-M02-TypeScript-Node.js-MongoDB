@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Params API</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <script src="./params.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <p class="subtitle is-6">Method</p>
+            <p class="title is-4">GET</p>
+            <p class="subtitle is-6">URI</p>
+            <p class="title is-4 is-spaced" id="uri">/compare/num1/num2</p>
+            <div class="input-container">
+                <label for="num1" class="label">Number1
+                    <input type="number" class="input" id="num1">
+                </label>
+                <label for="num2" class="label">Number2
+                    <input type="number" class="input" id="num2">
+                </label>
+            </div>
+            <button class="button is-primary" id="requestButton">Click to Request</button>
+        </div>
+
+        <div class="result">
+            <pre id="result"></pre>
+        </div>
+    </div>
+</body>
+</html>
