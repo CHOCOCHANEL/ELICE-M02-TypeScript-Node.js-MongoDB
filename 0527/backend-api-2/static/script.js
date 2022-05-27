@@ -10,5 +10,7 @@ const getDataAndPush = async() => {
     title.innerHTML = data.title;
     description.innerHTML = data.description;
     price.innerHTML = data.price;
-    image.innerHTML = data.image;
+    image.src = data.image;
 }
+
+getDataAndPush();

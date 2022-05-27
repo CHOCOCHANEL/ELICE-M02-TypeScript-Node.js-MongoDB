@@ -9,5 +9,5 @@
             }
         ]
     ],
-    "plugins": ["@babel/plugin-tranform-runtime"]
+    "plugins": ["@babel/plugin-transform-runtime"]
 }
