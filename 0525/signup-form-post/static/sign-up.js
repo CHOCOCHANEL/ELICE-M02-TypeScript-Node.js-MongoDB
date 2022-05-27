@@ -1,13 +1,19 @@
-const name = document.getElementById('name').value;
-const nickname = document.getElementById('nickname').value;
-const email = document.getElementById('email').value;
-const password = document.getElementById('password').value;
-const password2 = document.getElementById('confirm-pwd').value;
+const elementName = document.getElementById('name');
+const elementNickname = document.getElementById('nickname');
+const elementEmail = document.getElementById('email');
+const elementPassword = document.getElementById('password');
+const elementPassword2 = document.getElementById('confirm-pwd');
 
 const btn = document.getElementById('submitButton');
 
 const alertFunc = async (e) => {
     e.preventDefault();
+
+    const name = elementName.value;
+    const nickname = elementNickname.value;
+    const email = elementEmail.value;
+    const password = elementPassword.value;
+    const password2 = elementPassword2.value;
 
     if (password !== password2) {
         return alert('Check your password please.');
@@ -21,8 +27,9 @@ const alertFunc = async (e) => {
     };
 
     const userJson = JSON.stringify(user);
-    const PORT = 5500;
-    const URL = `https://${window.location.hostname}:${PORT}`
+
+    const PORT = 3000;
+    const URL = `http://localhost:${PORT}`
     const URI = '/api/register';
 
     const res = await fetch(URL + URI, {
