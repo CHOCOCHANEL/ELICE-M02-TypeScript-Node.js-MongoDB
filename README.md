@@ -20,8 +20,14 @@ Optional Property, Readonly Property etc
 ```
 
 ## 2. NodeJS
+
+> Javascript can do more than client side programming!
+- JS in Web Browser for Rich Internet Application
 - Single Thread vs Multi Thread
 - Blocking vs Non-Blocking
+
+> NodeJS is a revolutionary platform for Javascript
+- JS is now able to program server side!
 - JavaScript Runtime & NodeJS
 - ES6 & JavaScript Asynchronous Function   
 ```
@@ -34,5 +40,10 @@ Node Package Manager and ExpressJS
 - Web Programming
 
 ## 3. MongoDB
+
+> All application use DB to CRUD data.
+- Relational DBM is not enough.
+
+> NoSQL is light and able to treat more complicated big data compare to SQL
 - MongoDB & Mongoose
 - MongoDB Local & Atlas
