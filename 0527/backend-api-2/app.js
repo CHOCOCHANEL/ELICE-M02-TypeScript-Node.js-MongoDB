@@ -1,7 +1,5 @@
 import express from 'express';
 
-const data = require('./db/product/product1.json');
-
 const app = express();
 
 app.use(express.json());
@@ -58,11 +56,32 @@ app.get('/product/:productId', (req, res) => {
 
     const productData = products[idx];
 
-    res.json(productData);
-    
+    res.json(productData); 
 });
 
+app.get('/register', (req, res) => {
+    res.render('sign-up-age.html');
+});
 
+app.post('/register/adult', (req, res) => {
+
+    const { email, password, name, age } = req.body;
+
+    const data = {}
+
+    if (age >= 20) {
+        data.result = 'success';
+        data.reason = `${age}는 20 이상입니다.`;
+        data.email = email;
+    }
+
+    if (age < 20) {
+        data.result = 'fail';
+        data.reason = `${age}가 성인이 아닙니다.`;
+    }
+
+    res.json(data);
+})
 
 export { app };
 

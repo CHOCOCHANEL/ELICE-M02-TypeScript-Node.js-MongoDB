@@ -1,0 +1,36 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+  }
+  
+  /* 숫자 input 상자의 화살표를 없앰 */
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  
+  .label {
+    line-height: 2.5rem;
+    margin-right: 1rem;
+    flex-grow: 1;
+  }
+  
+  .input {
+    width: 20rem;
+  }
+  
+  .button {
+    margin: 1rem 0 2rem 0;
+  }
+  
+  .result {
+      border: #333 1px solid;
+      padding: 0.5rem;
+      font-size: 1.4rem;
+  }
+  

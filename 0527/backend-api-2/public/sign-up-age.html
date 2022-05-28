@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Params API</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="./sign-up-age.css">
+    <script src="./sign-up-age.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <div class="field is-horizontal">
+                <label for="email" class="label">Email</label>
+                <div class="control">
+                    <input type="email" class="input" id="email" placeholder="abc@example.com">
+                </div>
+            </div>
+            <div class="field is-horizontal">
+                <label for="password" class="label">Password</label>
+                <div class="control">
+                    <input type="password" class="input" id="password">
+                </div>
+            </div>
+            <div class="field is-horizontal">
+                <label for="name" class="label">Name</label>
+                <div class="control">
+                    <input type="text" class="input" id="name" placeholder="Nancy">
+                </div>
+            </div>
+            <div class="field is-horizontal">
+                <label for="age" class="label">Age</label>
+                <div class="control">
+                    <input type="number" class="input" id="age" placeholder="15">
+                </div>
+            </div>
+            <div class="control">
+                <button class="button is-primary" id="submitButton">Sign Up after checking age</button>
+            </div>
+            <div class="result">
+                <pre id="result"></pre>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

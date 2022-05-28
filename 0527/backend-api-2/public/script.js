@@ -6,6 +6,7 @@ const price = document.getElementById('productPrice');
 const image = document.getElementById('productImage');
 
 const btn = document.getElementById('requestCompare');
+const btnRegister = document.getElementById('requestRegister');
 
 const getDataAndPush = async() => {
     const res = await fetch('/product/1');
@@ -22,3 +23,7 @@ getDataAndPush();
 btn.addEventListener('click', () => {
     window.location.href = `http://localhost:${PORT}/compare`;
 })
+
+btnRegister.addEventListener('click', () => {
+    window.location.href = `http://localhost:${PORT}/register`;
+});
