@@ -1,6 +1,4 @@
-// 자유롭게 코드를 작성해 보세요.
-
-// 요소들 모음
+const PORT = 3000;
 const receiverNameInput = document.querySelector('#receiverName');
 const receiverPhoneNumberInput = document.querySelector('#receiverPhoneNumber');
 const postalCodeInput = document.querySelector('#postalCode');
@@ -9,6 +7,7 @@ const address1Input = document.querySelector('#address1');
 const address2Input = document.querySelector('#address2');
 const requestSelectBox = document.querySelector('#requestSelectBox');
 const orderButton = document.querySelector('#orderButton');
+const resultElement = document.querySelector('#result');
 
 // 이벤트 추가
 searchAddressButton.addEventListener('click', searchAddress);
@@ -76,7 +75,7 @@ async function doCheckout() {
   
   // JSON 만듦
   const dataJson = JSON.stringify(data)
-  const apiUrl = `https://${window.location.hostname}:8190/api/order`
+  const apiUrl = `http://${window.location.hostname}:${PORT}/api/order`
 
   // POST 요청
   const res = await fetch(apiUrl, {
@@ -89,6 +88,10 @@ async function doCheckout() {
   
   if (res.status === 201) {
     alert("주문에 성공하였습니다!")
+    const {
+      receiverName,
+    } = await res.json();
+    resultElement.innerText = `${receiverName}님, 요청하신 상품이 주문되었습니다.`;
   } else {
     alert("주문에 실패하였습니다...")
   }

@@ -17,6 +17,28 @@ app.use(express.static('public'));
 
 app.get('/', (req, res) => {
     res.render('index.html');
-})
+});
+
+app.post('/api/order', (req, res) => {
+    const {
+        receiverName,
+        receiverPhoneNumber,
+        postalCode,
+        address1,
+        address2,
+        request
+      } = req.body;
+
+      const newData = {
+          ...(receiverName && { receiverName}),
+          ...(receiverPhoneNumber && { receiverPhoneNumber }),
+          ...(postalCode && { postalCode }),
+          ...(address1 && { address1 }),
+          ...(address2 && { address2 }),
+          ...(request && { request }),
+      }
+      
+      res.status(201).json(newData);
+});
 
 export { app };

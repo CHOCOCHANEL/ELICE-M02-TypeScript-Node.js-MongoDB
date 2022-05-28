@@ -9,146 +9,150 @@
     <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma-rtl.min.css">
-    <script src="./sign-in.js" defer></script>
+    <script src="./order.js" defer></script>
 </head>
 <body>
     <div class="container">
-        <div class="box delivery-info">
+      <div class="box delivery-info">
         <!-- 배송지 정보 -->
         <p class="subtitle is-4">배송지정보</p>
         <div class="field is-horizontal">
-            <div class="field-label is-normal">
+          <div class="field-label is-normal">
             <label class="label" for="receiverName">이름</label>
-            </div>
-            <div class="field-body">
+          </div>
+          <div class="field-body">
             <div class="field">
-                <p class="control">
+              <p class="control">
                 <input
-                    class="input"
-                    id="receiverName"
-                    type="text"
-                    placeholder="받는 분 이름을 입력해 주세요."
-                    autocomplete="on"
+                  class="input"
+                  id="receiverName"
+                  type="text"
+                  placeholder="받는 분 이름을 입력해 주세요."
+                  autocomplete="on"
                 />
-                </p>
+              </p>
             </div>
-            </div>
+          </div>
         </div>
-
+  
         <div class="field is-horizontal">
-            <div class="field-label is-normal">
+          <div class="field-label is-normal">
             <label class="label" for="receiverPhoneNumber">연락처</label>
-            </div>
-            <div class="field-body">
+          </div>
+          <div class="field-body">
             <div class="field">
-                <p class="control">
+              <p class="control">
                 <input
-                    class="input"
-                    id="receiverPhoneNumber"
-                    type="number"
-                    placeholder="- 없이 입력해 주세요."
-                    autocomplete="on"
+                  class="input"
+                  id="receiverPhoneNumber"
+                  type="number"
+                  placeholder="- 없이 입력해 주세요."
+                  autocomplete="on"
                 />
-                </p>
+              </p>
             </div>
-            </div>
+          </div>
         </div>
-
+  
         <div class="field is-horizontal">
-            <div class="field-label is-normal">
+          <div class="field-label is-normal">
             <label class="label" for="address2">주소</label>
-            </div>
-            <div class="field-body search">
+          </div>
+          <div class="field-body search">
             <div class="field">
-                <p class="control">
+              <p class="control">
                 <input
-                    class="input"
-                    id="postalCode"
-                    type="text"
-                    placeholder="주소찾기를 클릭해 주세요."
-                    readonly
+                  class="input"
+                  id="postalCode"
+                  type="text"
+                  placeholder="주소찾기를 클릭해 주세요."
+                  readonly
                 />
-                </p>
+              </p>
             </div>
             <div>
-                <button
+              <button
                 class="button is-light is-hovered"
                 id="searchAddressButton"
-                >
+              >
                 주소찾기
-                </button>
+              </button>
             </div>
-            </div>
+          </div>
         </div>
-
+  
         <div class="field is-horizontal">
-            <div class="field-label is-normal no-label"></div>
-            <div class="field-body">
+          <div class="field-label is-normal no-label"></div>
+          <div class="field-body">
             <div class="field">
-                <p class="control">
+              <p class="control">
                 <input
-                    class="input"
-                    id="address1"
-                    type="text"
-                    placeholder=""
-                    autocomplete="on"
-                    readonly
+                  class="input"
+                  id="address1"
+                  type="text"
+                  placeholder=""
+                  autocomplete="on"
+                  readonly
                 />
-                </p>
+              </p>
             </div>
-            </div>
+          </div>
         </div>
-
+  
         <div class="field is-horizontal">
-            <div class="field-label is-normal no-label"></div>
-            <div class="field-body">
+          <div class="field-label is-normal no-label"></div>
+          <div class="field-body">
             <div class="field">
-                <p class="control">
+              <p class="control">
                 <input
-                    class="input"
-                    id="address2"
-                    type="text"
-                    placeholder=""
-                    autocomplete="on"
+                  class="input"
+                  id="address2"
+                  type="text"
+                  placeholder=""
+                  autocomplete="on"
                 />
-                </p>
+              </p>
             </div>
-            </div>
+          </div>
         </div>
-
+  
         <div class="field is-horizontal">
-            <div class="field-label is-normal">
+          <div class="field-label is-normal">
             <label class="label" for="requestSelectBox">요청사항</label>
-            </div>
-            <div class="field-body">
+          </div>
+          <div class="field-body">
             <div class="select">
-                <select id="requestSelectBox">
+              <select id="requestSelectBox">
                 <option value="배송시 요청사항을 선택해 주세요.">
-                    배송시 요청사항을 선택해 주세요.
+                  배송시 요청사항을 선택해 주세요.
                 </option>
                 <option value="직접 수령하겠습니다." class="select-option">
-                    직접 수령하겠습니다.
+                  직접 수령하겠습니다.
                 </option>
                 <option value="배송 전 연락바랍니다." class="select-option">
-                    배송 전 연락바랍니다.
+                  배송 전 연락바랍니다.
                 </option>
                 <option value="부재 시 경비실에 맡겨주세요." class="select-option">
-                    부재 시 경비실에 맡겨주세요.
+                  부재 시 경비실에 맡겨주세요.
                 </option>
                 <option value="부재 시 문 앞에 놓아주세요." class="select-option">
-                    부재 시 문 앞에 놓아주세요.
+                  부재 시 문 앞에 놓아주세요.
                 </option>
                 <option value="부재 시 택배함에 넣어주세요." class="select-option">
-                    부재 시 택배함에 넣어주세요.
+                  부재 시 택배함에 넣어주세요.
                 </option>
                 <option value="직접 입력" class="select-option">직접 입력</option>
-                </select>
+              </select>
             </div>
-            </div>
+          </div>
+          
         </div>
         <button class="button is-primary" id="orderButton">주문하기</button>
+
+        <div class="result">
+          <pre id="result"></pre>
         </div>
+      </div>
     </div>
-    
-</body>
+  </body>
 </html>
