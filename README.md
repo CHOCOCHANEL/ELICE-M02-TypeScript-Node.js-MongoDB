@@ -37,7 +37,12 @@ Async & Await, Promise, Callback Hell
 ```
 Node Package Manager and ExpressJS
 ```
-- Web Programming
+- 3 Layer Architecture
+```
+- Controller (API Layer)
+- Service Layer
+- Model Layer (Data Access Layer)
+```
 
 ## 3. MongoDB
 
