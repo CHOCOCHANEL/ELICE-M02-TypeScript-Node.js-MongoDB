@@ -1,4 +1,4 @@
-const emailSelectBox = document.getElementById('emailSelectBox');
+const emailInput = document.getElementById('emailInput');
 const passwordInput = document.getElementById('passwordInput');
 const submitButton = document.getElementById('submitButton');
 const resultElem = document.getElementById('result');
@@ -7,7 +7,7 @@ const resultElem = document.getElementById('result');
 async function handleSubmit(e) {
     e.preventDefault;
 
-    const email = emailSelectBox.value;
+    const email = emailInput.value;
     const password = passwordInput.value;
 
     if (!email || !password) {
