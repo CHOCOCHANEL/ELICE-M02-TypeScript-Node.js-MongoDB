@@ -1,5 +1,5 @@
 class UserService {
-    addChile(email, age) {
+    addChild(email, age) {
         const data = {};
 
         if (age < 20) {
