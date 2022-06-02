@@ -1,4 +1,5 @@
 import express from "express";
+import { userRouter } from "./routers/user-router";
 
 const app = express();
 
@@ -18,5 +19,7 @@ app.use(express.static('public'));
 app.get('/', (req, res) => {
     res.render('index.html');
 });
+
+app.use('/api', userRouter);
 
 export { app };

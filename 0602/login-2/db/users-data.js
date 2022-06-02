@@ -1,4 +1,4 @@
-const userData = [
+const usersData = [
     {
         email: "abc@example.com",
         password: "1111"
@@ -17,4 +17,4 @@ const userData = [
     },
 ];
 
-export { userData };
+export { usersData };

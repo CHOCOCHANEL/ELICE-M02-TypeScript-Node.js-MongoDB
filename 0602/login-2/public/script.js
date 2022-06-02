@@ -19,6 +19,8 @@ async function handleSubmit(e) {
         password,
     };
 
+    console.log(`user: ${user}`);
+
     // POST Request
     const res = await fetch('/api/login', {
         method: 'POST',
