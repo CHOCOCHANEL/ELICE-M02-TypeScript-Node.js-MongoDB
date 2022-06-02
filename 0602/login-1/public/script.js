@@ -1,7 +1,5 @@
-const emailInput = document.getElementById('emailInput');
+const emailSelectBox = document.getElementById('emailSelectBox');
 const passwordInput = document.getElementById('passwordInput');
-const nameInput = document.getElementById('nameInput');
-const ageInput = document.getElementById('ageInput');
 const submitButton = document.getElementById('submitButton');
 const resultElem = document.getElementById('result');
 
@@ -9,28 +7,20 @@ const resultElem = document.getElementById('result');
 async function handleSubmit(e) {
     e.preventDefault;
 
-    const email = emailInput.value;
+    const email = emailSelectBox.value;
     const password = passwordInput.value;
-    const name = nameInput.value;
-    const age = parseInt(ageInput.value);
 
-    if (!email || !password || !name) {
+    if (!email || !password) {
         return alert('Check every field filled');
-    }
-
-    if (!age) {
-        return alert('Check Age field. 0 for age is not allowed');
     }
 
     const user = {
         email,
         password,
-        name,
-        age,
     };
 
     // POST Request
-    const res = await fetch('/api/register/child', {
+    const res = await fetch('/api/login', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -38,13 +28,12 @@ async function handleSubmit(e) {
         body: JSON.stringify(user),
     });
 
-    const { result, reason, email: registeredEmail } = await res.json();
+    const { result, reason } = await res.json();
 
     if (result === 'success') {
         resultElem.innerText = `
         Result: ${result}
         Reason: ${reason}
-        Email: ${registeredEmail}
         `;
     }
 
