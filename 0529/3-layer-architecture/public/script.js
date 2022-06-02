@@ -9,7 +9,7 @@ const resultElem = document.getElementById('result');
 async function handleSubmit(e) {
     e.preventDefault;
 
-    const email = emailInput.valie;
+    const email = emailInput.value;
     const password = passwordInput.value;
     const name = nameInput.value;
     const age = parseInt(ageInput.value);
